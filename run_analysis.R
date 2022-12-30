@@ -51,3 +51,4 @@ colnames(complete_tbl)[colnames(complete_tbl) %in% c("V1","y_labeled")]<-c("Subj
 
 # Tidy dataset with the average of each variable grouped by Subject and Activity
 tid_avg <- complete_tbl %>% aggregate(~Subject + Activity, mean(complete_tbl[3:81]))
+write.table(complete_tbl, file="./tidy_data.txt",row.name=FALSE)
